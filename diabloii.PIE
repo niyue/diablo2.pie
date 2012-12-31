@@ -1,0 +1,187 @@
+﻿/*
+Health potion						=> keyboard.1				=> shake nunchuck
+Health potion						=> keyboard.2				=> shake wiimonte
+Magic potion						=> keyboard.3				=> nunchuck.joystick.up
+Health potion						=> keyboard.4				=> nunchuck.joystick.down
+
+Movement								=> Mouse pointer		=> wiimote + sensor bar
+Close/Option						=> keyboard.escape	=> wiimote.home + nunchuck.Z
+Town portal							=> keyboard.F4			=> wiimote.CircleClockwise
+2nd secondary skill			=> keyboard.F2			=> wiimote.CrossArms (mapped to Bearman of Droid)
+Show dropped items			=> keyboard.Alt			=> nunchuck.Z
+Stay still							=> keyboard.Shift		=> nunchuck.C
+Show equipped arms			=> keyboard.b				=> wiimote.home
+
+Primary skill						=> mouse.leftClick	=> wiimote.B
+Secondary skill					=> mouse.rightClick	=> wiimote.A
+1st secondary skill			=> keyboard.F1			=> wiimote.1
+2nd secondary skill			=> keyboard.F2			=> wiimote.2
+3rd secondary skill			=> keyboard.F3			=> wiimote.minus
+4th secondary skill			=> keyboard.F4			=> wiimote.plus (mapped to town portal)
+
+5st secondary skill			=> keyboard.F5			=> wiimote.dpad.left
+6st secondary skill			=> keyboard.F6			=> wiimote.dpad.down
+7st secondary skill			=> keyboard.F7			=> wiimote.dpad.right
+8st secondary skill			=> keyboard.F8			=> wiimote.dpad.up
+*/
+// Wiimote scans at 100hz and monitor refeshes itself typically at 60hz
+GlovePIE.FrameRate = 100hz
+
+mouse.LeftButton = wiimote.B
+mouse.RightButton = wiimote.A
+
+// Mouse movement
+var.ButtonFreezeTime = 250ms
+var.PointerBump = KeepDown(Pressed(wiimote.A),var.ButtonFreezeTime) or KeepDown(Pressed(wiimote.B),var.ButtonFreezeTime)
+
+if wiimote.PointerVisible but not var.PointerBump then
+  mouse.x = wiimote.PointerX
+  mouse.y = wiimote.PointerY
+end if
+
+
+if nunchuck.shakiness > 20 then
+   Keyboard.1 = true
+   wait 50ms
+   Keyboard.1 = false
+   wait 1000ms
+end if
+
+if wiimote.shakiness > 20 then
+   Keyboard.2 = true
+   wait 50ms
+   Keyboard.2 = false
+   wait 1000ms
+end if
+
+if wiimote.Home = true and nunchuck.Z = true then
+   key.Escape = true
+   wait 50ms
+   key.Escape = false
+end if
+
+
+if wiimote.CrossArms = true and nunchuck.Z = true then
+   key.F2 = true
+   wait 50ms
+   key.F2 = false
+   mouse.RightButton = true
+   wait 50ms
+   mouse.RightButton = false
+   key.F1 = true
+   wait 50ms
+   key.F1 = false
+end if
+
+if wiimote.CircleClockwise = true then
+   key.F4 = true
+   wait 50ms
+   key.F4 = false
+   mouse.RightButton = true
+   wait 50ms
+   mouse.RightButton = false
+   key.F1 = true
+   wait 50ms
+   key.F1 = false
+end if
+
+key.Alt = nunchuck.Z
+key.Shift = nunchuck.C
+key.b = wiimote.Home
+
+key.Three = nunchuck.Right
+key.Four = nunchuck.Down
+
+if wiimote.One = true then
+   key.F1 = true
+   wait 50ms
+   key.F1 = false
+   mouse.RightButton = true
+   wait 50ms
+   mouse.RightButton = false
+end if
+
+if wiimote.Two = true then
+   key.F2 = true
+   wait 50ms
+   key.F2 = false
+   mouse.RightButton = true
+   wait 50ms
+   mouse.RightButton = false
+   key.F1 = true
+   wait 50ms
+   key.F1 = false
+end if
+
+if wiimote.Minus = true then
+   key.F3 = true
+   wait 50ms
+   key.F3 = false
+   mouse.RightButton = true
+   wait 50ms
+   mouse.RightButton = false
+   key.F1 = true
+   wait 50ms
+   key.F1 = false
+end if
+
+if wiimote.Plus = true then
+   key.F4 = true
+   wait 50ms
+   key.F4 = false
+   mouse.RightButton = true
+   wait 50ms
+   mouse.RightButton = false
+   key.F1 = true
+   wait 50ms
+   key.F1 = false
+end if
+
+if wiimote.Left = true then
+   key.F5 = true
+   wait 50ms
+   key.F5 = false
+   mouse.RightButton = true
+   wait 50ms
+   mouse.RightButton = false
+   key.F1 = true
+   wait 50ms
+   key.F1 = false
+end if
+
+if wiimote.Down = true then
+   key.F6 = true
+   wait 50ms
+   key.F6 = false
+   mouse.RightButton = true
+   wait 50ms
+   mouse.RightButton = false
+   key.F1 = true
+   wait 50ms
+   key.F1 = false
+end if
+
+if wiimote.Right = true then
+   key.F7 = true
+   wait 50ms
+   key.F7 = false
+   mouse.RightButton = true
+   wait 50ms
+   mouse.RightButton = false
+   key.F1 = true
+   wait 50ms
+   key.F1 = false
+end if
+
+if wiimote.Up = true then
+   key.F8 = true
+   wait 50ms
+   key.F8 = false
+   mouse.RightButton = true
+   wait 50ms
+   mouse.RightButton = false
+   key.F1 = true
+   wait 50ms
+   key.F1 = false
+end if
+
