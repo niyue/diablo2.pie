@@ -31,8 +31,8 @@ My wife is a big fan of [Diablo II](http://en.wikipedia.org/wiki/Diablo_II), in 
 | Health potion	 | keyboard.4 | nunchuck.joystick.down |
 | Movement      | Mouse pointer		| wiimote + sensor bar |
 | Close/Option  | keyboard.escape	| wiimote.home + nunchuck.Z |
-| Town portal   | keyboard.F4		| wiimote.CircleClockwise |
-| 2nd secondary skill | keyboard.F2         | wiimote.CrossArms (mapped to Bearman of Droid) |
+| Town portal   | keyboard.F4		| wiimote.CircleClockwise gesture (draw a circle with your Wiimote) |
+| 2nd secondary skill | keyboard.F2         | wiimote.CrossArms gesture (mapped to transformation skill of Druid intuitively) |
 | Show dropped items  | keyboard.Alt			| nunchuck.Z |
 | Stay still          | keyboard.Shift		    | nunchuck.C |
 | Show equipped arms  | keyboard.b				| wiimote.home |
