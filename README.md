@@ -8,7 +8,7 @@ My wife is a big fan of [Diablo II](http://en.wikipedia.org/wiki/Diablo_II), in 
 * Connect Wiimote to the PC
 	* You need to have a Bluetooth adapter installed in your PC, and I use the built-in Bluetooth adapter in my MacBook, which works well with Wiimote. 
 	* Not all Bluetooth adapter can work with Wiimote, check [this page](http://wiibrew.org/wiki/List_of_Working_Bluetooth_Devices) if necessary
-	* Add a new Bluetooth device in Windows, with Wiimote's "1" and "2" buttons pressed symutaneously
+	* Add a new Bluetooth device in Windows, with Wiimote's "1" and "2" buttons pressed simutaneously
 	* Open GlovePIE, and switch to "GUI" tab. If Wiimote is connected successfully, the LED "1" and "4" in Wiimote will be lighted (If you switch from the GUI tab, and don't have any GlovePIE script running, GlovePIE will turn off your Wiimote for power saving, and it should be automatically turned on when necessary).
 	* You should be able to see a button called "Detect Input" in GlovePIE, once clicked, press any key in your Wiimote, and GlovePIE should be able to detect the input from Wiimote and show it to you
 * Start Sensor Bar of Wii
